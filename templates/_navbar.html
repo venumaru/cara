@@ -1,0 +1,25 @@
+{% load static %}
+        
+
+<section id="header">
+    <a href="">
+        <img class="logo" src="{% static 'img/logo.png'%}" alt="Logo">
+    </a>
+    <div>
+        {% comment %} {% with request.resolver_match.utl_name as url_name %} {% endcomment %}
+        <ul id="navbar">
+            {% url 'index' as url %}
+            <li><a class="{% if url_name == url %}active{% endif %}" href="{% url 'cara:index' %}">Home</a></li>
+            <li><a href="{% url 'cara:shop' %}">Shop</a></li>
+            <li><a href="{% url 'cara:blog' %}">Blog</a></li>
+            <li><a href="{% url 'cara:about' %}">About</a></li>
+            <li><a href="{%url 'cara:contact' %}">Contact</a></li>
+            <li><a href="#">
+                
+                <i class="far fa-shopping-bag"></i>
+                
+            </a></li>
+        </ul>
+    {% comment %} {% endwith %} {% endcomment %}
+    </div>
+</section>
